@@ -22,7 +22,7 @@ def probability(letter_tensor):
         pass
     return tensor
 try:
-    model=torch.load(f="model.pth").to(device)
+    model=torch.load(f="model.pth",map_location=device).to(device)
     print("载入模型")
 except:
     model=MainModel().to(device)
