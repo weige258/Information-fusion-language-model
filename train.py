@@ -6,7 +6,6 @@ for e in range(5):
         try:
             a,b,c,d=line.split(",")
             train(c,d)
-            print(d)
             generation(c)
             num+=1
             if num%500==0:

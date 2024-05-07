@@ -1,3 +1,5 @@
+import torch.nn
+
 from Model import *
 
 if torch.cuda.is_available():
@@ -38,7 +40,6 @@ def train(answer,question):
         label=probability(next).to(device)
         output=model(input,target.unsqueeze(0))
         loss=loss_func(output,label)
-        print(loss)
         loss.backward()
         optimizer.step()
         optimizer.zero_grad()
